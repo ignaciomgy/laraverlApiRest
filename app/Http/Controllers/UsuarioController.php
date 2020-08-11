@@ -14,7 +14,9 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $users = Usuario::all();
+        return view('usuarios.index', ['usuarios' => $users]);
+
     }
 
     /**
@@ -24,7 +26,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('usuarios.create');
     }
 
     /**
@@ -49,7 +51,8 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        return Usuario::where('id', $id)->get();
+        //return Usuario::where('id', $id)->get();
+        return view('usuarios.show', ['usuarios' => $id]);
     }
 
     /**

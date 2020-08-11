@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('usuarios', 'UsuarioController@index');
+
+Route::get('usuarios/{id}', 'UsuarioController@show');
+
+Route::get('usuarios/create', 'UsuarioController@create');
+
+Route::get('usuarios', 'UsuarioController@store');
